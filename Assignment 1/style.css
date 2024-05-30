@@ -1,0 +1,86 @@
+body {
+    font-family: 'Pacifico', cursive;
+    margin: 0; 
+    padding: 0; 
+    background-image: url('picture.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    opacity: 0.9; /* Adjust background image opacity */
+}
+
+header {
+    text-align: center;
+    /*background-color: rgba(193, 19, 19, 0.5);*/
+    width: 100%; 
+    padding: 20px 0; 
+}
+
+header h1 {
+    color: #be1010; /* Change header text color */
+    margin: 0; body {
+        font-family: 'Pacifico', cursive;
+        margin: 0; 
+        padding: 0; 
+        background-image: url('picture.jpg'); 
+        background-size: cover; /* Cover the entire viewport */
+        background-position: center; /* Center the image */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Ensure full viewport height */
+        opacity: 0.9; /* Adjust background image opacity */
+    }
+    
+    header {
+        text-align: center;
+        background-color: rgba(246, 244, 244, 0.5);
+        width: 100%; 
+        padding: 20px 0;
+    }
+    
+    header h1 {
+        color: #f5eeee; /* Change header text color */
+        margin: 0; 
+        font-size: 32px; 
+    }
+    
+    section {
+        max-width: 800px; /* Set maximum width for lyrics */
+        padding: 20px;
+        color: #fff; /* Change lyrics text color */
+        text-align: center;
+        line-height: 1.6; 
+        font-size: 1.2em; 
+    }
+    
+    section p {
+        margin-bottom: 10px; /* Add spacing between paragraphs */
+    }
+    
+    font-size: 32px; 
+}
+
+section {
+    max-width: 800px; 
+    padding: 20px;
+    color: #fff; 
+    text-align: center;
+    line-height: 1.6; 
+    font-size: 1.2em; 
+}
+audio {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+section p {
+    margin-bottom: 10px; 
+}
