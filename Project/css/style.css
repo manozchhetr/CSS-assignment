@@ -1,0 +1,829 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2b2b2b;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header .slogan {
+    flex-grow: 1;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #ffcc00; /* Highlight color for the slogan */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    width: 100%;
+    justify-content: center; /* Center content on smaller screens */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ffcc00; /* Highlight color for the hover effect */
+    color: #2b2b2b;
+    border-radius: 5px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem; /* Space above form on mobile view */
+    width: 100%;
+    justify-content: center; /* Center the search form on smaller screens */
+}
+
+.search-form input[type="text"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Maximum width for the search input */
+}
+
+.search-form button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #ffcc00; /* Highlight color for the button */
+    color: #2b2b2b;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 100px; /* Minimum width for the button */
+}
+
+.search-form button:hover {
+    background-color: #e6b800; /* Slightly darker shade for hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 0.5rem; /* Space below logo */
+    }
+
+    .slogan {
+        margin-bottom: 1rem; /* Space below slogan */
+        font-size: 1rem; /* Smaller font size for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        width: 100%;
+        align-items: center; /* Center nav items horizontally */
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Space between nav items */
+    }
+
+    .search-form {
+        margin-top: 1rem; /* Space above search form */
+    }
+}
+
+@media (max-width: 576px) {
+    header .logo img {
+        height: 40px; /* Reduce logo size on very small screens */
+    }
+
+    .slogan {
+        font-size: 0.9rem; /* Further reduce font size for slogan */
+    }
+
+    nav ul li a {
+        padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Images  Section */
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    height: 100vh; /* Full viewport height */
+}
+
+.images img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    animation: slideIn 10s infinite;
+    filter: brightness(80%); /* Slightly dim to enhance text visibility */
+}
+
+/* Additional Morsque Styles */
+.morsque-container {
+    text-align: center;
+    margin-top: 1rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.morsque {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #ff6600; /* Highlight color for Morsque */
+    animation: textAnimation 3s infinite;
+}
+
+/* Keyframes for text animation */
+@keyframes textAnimation {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}/* Description Section */
+.description {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('alexa-background.jpg') no-repeat center center/cover;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: background 1s ease-in-out; /* Smooth background image transition */
+}
+
+.description:hover {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('new-background.jpg') no-repeat center center/cover; /* Example of changing background on hover */
+}
+
+.description .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark gradient overlay */
+    z-index: 1;
+    transition: opacity 1s ease-in-out; /* Smooth overlay transition */
+    opacity: 0;
+}
+
+.description:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.description-text {
+    position: relative;
+    z-index: 2;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth text transition */
+}
+
+.description:hover .description-text {
+    transform: translateY(-10px); /* Move text up on hover */
+    opacity: 0.8; /* Make text slightly transparent on hover */
+}
+
+.description-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    animation: zoomIn 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.description-text p {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    animation: fadeInUp 1s forwards;
+    animation-delay: 1s;
+}
+
+.description-text .cta-button {
+    padding: 0.75rem 2rem;
+    font-size: 1.25rem;
+    color: #fff;
+    background-color: #ff6600;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    animation: bounceIn 1s forwards;
+    animation-delay: 1.5s;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.description-text .cta-button:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
+}
+
+/* Products Overview */
+.products-overview {
+    padding: 2rem; /* Adds padding around the entire products overview section */
+}
+
+.products-overview h2 {
+    text-align: center; 
+    margin-bottom: 2rem; 
+    animation: fadeInUp 2s; /* Applies a fade-in-up animation to the heading */
+}
+
+.product-highlights {
+    display: grid; /* Uses a grid layout for the product highlights */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Creates a responsive grid with columns that fit the available space */
+    gap: 2rem; /* Adds space between grid items */
+    padding: 2rem; /* Adds padding around the grid */
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 10px; 
+    font-family: 'Playwrite AU TAS', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to each product item */
+    overflow: hidden; 
+    text-align: center; 
+    padding: 1rem; 
+    transition: transform 0.3s, box-shadow 0.3s, rotate 0.3s; /* Smooth transition effects for transformations and shadows */
+    position: relative; 
+}
+
+.product-item:hover {
+    transform: scale(1.05) rotate(3deg); /* Scales up and slightly rotates the product item on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increases the shadow size for a more prominent hover effect */
+}
+
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Set a maximum height for consistency */
+    object-fit: cover; /* Ensure the image covers the space nicely */
+    transition: transform 0.3s;
+}
+
+.product-item:hover img {
+    transform: scale(1.1);
+}
+
+.product-item h3 {
+    font-family: 'Playwrite AU TAS', sans-serif;
+    font-size: 1.5rem;
+}
+
+.product-item p {
+    font-family: 'Playwrite AU TAS', sans-serif;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+/* Container and Row */
+.container-1 {
+    max-width: 1170px; /* Sets the maximum width of the container */
+    margin: auto; /* Centers the container horizontally */
+}
+
+.row {
+    display: flex; /* Uses flexbox for layout */
+    flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
+}
+
+ul {
+    list-style: none; /* Removes default list styling (bullets) */
+}
+
+/* Footer Styles */
+footer {
+    font-family: 'Open Sans', sans-serif; 
+    background-color: #24262b; 
+    padding: 70px 0; 
+    color: #ffffff; 
+}
+
+.footer-col {
+    width: 25%; 
+    padding: 0 15px; 
+}
+
+.footer-col h4 {
+    font-size: 18px; 
+    color: #ffffff; 
+    font-family: 'Playwrite FR Moderne', sans-serif;
+    text-transform: capitalize; /* Capitalizes the first letter of each word */
+    margin-bottom: 30px; 
+    font-weight: 500; 
+    position: relative; 
+}
+
+.footer-col h4::before {
+    content: ''; /* Inserts an empty content element for styling */
+    position: absolute; 
+    left: 0; 
+    bottom: -10px; /* Positions the line 10px below the bottom of the heading */
+    background-color: #ffcc00; /* Sets the line color to yellow */
+    height: 2px; 
+    width: 50px; 
+}
+
+.footer-col ul {
+    list-style: none; /* Removes default list styling (bullets) */
+    padding: 0; 
+    margin: 0; 
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px; /* Adds space below each list item except the last one */
+}
+
+.footer-col ul li a {
+    font-size: 16px; 
+    text-transform: capitalize; /* Capitalizes the first letter of each word in the link text */
+    color: #ffffff; 
+    text-decoration: none; /* Removes the underline from links */
+    font-weight: 300; 
+    display: block; 
+    transition: all 0.3s ease; /* Adds a smooth transition effect for all properties */
+}
+
+.footer-col ul li a:hover {
+    color: #ffcc00; /* Changes the link color to yellow on hover */
+    padding-left: 10px; /* Adds space to the left of the link text on hover */
+}
+
+.footer-col .social-links a {
+    display: inline-block; 
+    height: 40px; 
+    width: 40px; 
+    background-color: rgba(225, 225, 225, 0.2); /* Sets a light gray background with transparency */
+    margin: 0 10px 10px 0; 
+    text-align: center; 
+    line-height: 40px; 
+    border-radius: 50%; 
+    color: #ffffff; 
+    transition: all 0.3s ease; /* Adds a smooth transition effect for all properties */
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b; /* Changes the icon color to dark gray on hover */
+    background-color: #ffcc00; /* Changes the background color to yellow on hover */
+}
+
+/* Bottom Bar */
+.bottom-bar {
+    background-color: #ffcc00; 
+    text-align: center; 
+    padding: 10px 0; 
+    margin-top: 50px; /* Adds space above the bottom bar */
+}
+
+.bottom-bar p {
+    color: #24262b; 
+    margin: 0;
+    font-size: 16px; 
+}
+
+
+/* Responsive design */
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 576px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+/* product page */
+article {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    flex: 0 0 auto; /* Prevent shrinking or growing */
+}
+
+article img {
+    width: 100%;
+    height: auto;
+    max-height: 320px; /* Set a maximum height for consistency */
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-title {
+    font-size: 1.2em;
+    margin: 0;
+    color: #333;
+}
+
+.product-description {
+    font-size: 0.9em;
+    color: #666;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 1.1em;
+    color: #e94e77;
+    margin: 10px 0;
+}
+
+.buy-now {
+    display: inline-block;
+    background-color: #e94e77;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-now:hover {
+    background-color: #d43f6c;
+}
+
+article:hover {
+    transform: none; /* Removed scale effect */
+    box-shadow: none; /* Removed shadow effect */
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 180px;
+    padding: 20px;
+    max-width: 100vw;
+}
+/* Additional Products Section */
+.additional-products {
+    background: linear-gradient(135deg, #2c3e50, #4b79a1); /* Dark gradient from dark slate gray to a slightly lighter shade */
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+.additional-products h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #e0e6ed; /* Light color that contrasts well with the dark gradient */
+}
+
+.additional-products p {
+    font-size: 1rem;
+    color: #cfd9df; /* Slightly darker light color for good contrast and readability */
+    margin-bottom: 2rem;
+}
+
+.extra-products {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    
+ 
+}
+
+.product-item:hover {
+    /* Remove hover effects */
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.product-item img {
+    width: 100%;
+    height: 500px; 
+    object-fit: cover;
+}
+
+
+
+.product-item h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.product-item p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 2rem;
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+}
+
+.about-us h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-us p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Our Journey Section */
+.our-journey {
+    padding: 2rem;
+    background: linear-gradient(to right, #434343, #000000);
+    color: white;
+}
+
+.our-journey h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.journey-content {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.journey-content p {
+    margin-bottom: 1rem;
+}
+
+/* Awards Section */
+.awards {
+    padding: 2rem;
+    background-color: #2c3e50;
+    text-align: center; 
+    color: white; 
+}
+
+.awards h2 {
+    font-family: 'Montserrat', sans-serif; /* Sets the font for the heading */
+    font-size: 2rem;
+    margin-bottom: 1rem; 
+}
+
+.award-content {
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 1rem;
+    line-height: 1.6; 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.award-content p {
+    margin-bottom: 1rem;
+}
+
+.award-content .photo-content {
+    position: relative; 
+    display: inline-block; 
+}
+
+.award-content .photo-content img {
+    width: 100%; 
+    height: auto; 
+    max-width: 500px; 
+    border-radius: 10px; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for scaling and shadow effects */
+}
+
+.award-content .photo-content img:hover {
+    transform: scale(1.1); /* Scales the image up on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Adds a shadow effect on hover */
+}
+
+/* Company Photo Section */
+.company-photo {
+    padding: 2rem; 
+    background: linear-gradient(to right, #232526, #414345); /* Sets a gradient background from dark to lighter gray */
+    color: white; 
+}
+
+.company-photo h2 {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 2rem; 
+    margin-bottom: 1rem; 
+    text-align: center; 
+}
+
+.photo-content {
+    text-align: center; 
+    position: relative; /* Positions the photo content relative to its normal position */
+    display: inline-block; 
+}
+
+.photo-content img {
+    width: 100%; 
+    height: auto; /* Keeps the image aspect ratio */
+    max-width: 600px; 
+    border-radius: 10px; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for scaling and shadow effects */
+}
+
+.photo-content img:hover {
+    transform: scale(1.1); /* Scales the image up on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Adds a shadow effect on hover */
+}
+
+.photo-content p {
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 1rem; 
+    line-height: 1.6; /* Increases line height for better readability */
+    margin-top: 1rem; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-us p, .journey-content p, .award-content p, .photo-content p {
+        font-size: 1rem; /* Reduces font size for paragraphs on smaller screens */
+    }
+    
+    .about-us h1, .our-journey h2, .awards h2, .company-photo h2 {
+        font-size: 1.8rem; /* Reduces font size for headings on smaller screens */
+    }
+    
+    .award-content .photo-content img, .photo-content img {
+        max-width: 100%; /* Ensures images fit within the container on smaller screens */
+    }
+}
+
+
+
+/* Contact Page Styles Start Here */
+/* Contact Form Styles */
+.contact-form, .additional-contact-info {
+    max-width: 600px; 
+    margin: 20px auto; 
+    padding: 20px; 
+    border: 1px solid #a10909; /* Adds a solid red border */
+    border-radius: 5px; /* Rounds the corners of the border */
+    background-color: #ffffff; 
+    box-shadow: 0 2px 4px rgba(7, 193, 47, 0.863); /* Adds a greenish shadow for a subtle 3D effect */
+  }
+  
+  .contact-form h1, .additional-contact-info h2 {
+    margin-top: 0; 
+    font-family: 'Montserrat', sans-serif; /* Sets the font for headings */
+  }
+  
+  .contact-form label {
+    display: block; /* Ensures labels are displayed as block elements */
+    margin-bottom: 5px; 
+    font-weight: 700; 
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 3px;
+    font-family: 'Open Sans', sans-serif; 
+}
+  
+  .contact-form input[type="text"]:hover, 
+  .contact-form input[type="email"]:hover, 
+  .contact-form input[type="text"]:focus, 
+  .contact-form input[type="email"]:focus, 
+  .contact-form textarea:hover, 
+  .contact-form textarea:focus {
+    border-color: #333; /* Changes the border color to dark grey on hover or focus */
+    outline: none; /* Removes the default outline on focus */
+  }
+  
+  .contact-form button {
+    display: inline-block; /* Allows the button to be an inline-block element */
+    padding: 10px 20px;
+    background-color: #333; /* Sets the background color to dark grey */
+    color: #fff; 
+    border: none; 
+    border-radius: 3px;
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    font-family: 'Montserrat', sans-serif; 
+    transition: background-color 0.3s ease; /* Adds a smooth transition effect for background color */
+  }
+  
+  .contact-form button:hover {
+    background-color: #555; /* Changes the background color to a lighter grey on hover */
+  }
+  
+  .additional-contact-info h3 {
+    margin-top: 20px; 
+}
+  
+  .additional-contact-info p {
+    margin: 10px 0; 
+  }
+  
+  .additional-contact-info a {
+    color: #333; 
+    text-decoration: none; 
+    transition: color 0.3s ease; /* Adds a smooth transition effect for the link color */
+  }
+  
+  .additional-contact-info a:hover {
+    color: #007BFF;
+  }
+  
+  /* Map Styles */
+  .map {
+    margin-top: 20px; 
+  }
+  
+  .map iframe {
+    width: 100%; 
+    border: 0; 
+    border-radius: 3px; 
+  }
+  
